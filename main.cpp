@@ -11,9 +11,6 @@ using namespace std;
 
 int main()
 {
-
-    vector<int> testVector;
-
-    seqSeach(testVector, 6);
+    cout << "Hello World" << endl;
     return 0;
 }
