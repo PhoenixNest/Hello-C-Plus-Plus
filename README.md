@@ -1,1 +1,1 @@
-# StudyCPlusPlus
+# Study C++
