@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 #include <algorithm>
 using namespace std;
+
+#include "seqList.h"
 
 #include "mySearch.h"
 #include "mySort_Exchange.h"
@@ -11,6 +14,8 @@ using namespace std;
 
 int main()
 {
+    
+
     cout << "Hello World" << endl;
     return 0;
 }
