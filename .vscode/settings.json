@@ -1,6 +1,11 @@
 {
     "files.associations": {
+        "locale": "cpp",
+        "sstream": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "ostream": "cpp"
     }
 }

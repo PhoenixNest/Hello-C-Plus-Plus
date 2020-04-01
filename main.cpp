@@ -1,7 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <cstdlib>
-#include <algorithm>
+
 using namespace std;
 
 #include "seqList.h"
@@ -14,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    
+    // seqList<int> *list = new seqList<int>(100);
 
     cout << "Hello World" << endl;
     return 0;
