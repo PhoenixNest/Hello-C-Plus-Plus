@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "seqList.h"
+#include "LinkList.h"
 
 #include "mySearch.h"
 #include "mySort_Exchange.h"
@@ -14,6 +15,7 @@ using namespace std;
 int main()
 {
     // seqList<int> *list = new seqList<int>(100);
+    // linkList<int> *list = new linkList<int>();
 
     cout << "Hello World" << endl;
     return 0;
