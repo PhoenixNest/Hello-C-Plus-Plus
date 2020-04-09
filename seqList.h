@@ -38,7 +38,7 @@ template <class T>
 seqList<T>::seqList(int initSize)
 {
     if (initSize <= 0)
-        throw isErrorSize();
+        throw errorSize();
 
     maxSize = initSize;
     data = new T[maxSize];
@@ -63,7 +63,7 @@ void seqList<T>::insert(int position, const T &value)
 {
     if (position < 0 || position > length)
         //* 判断是否越界
-        throw isOutOfRange();
+        throw outOfRange();
 
     if (length == maxSize)
         //* 当表满时，扩大表容量
@@ -87,7 +87,7 @@ void seqList<T>::remove(int position)
 {
     if (position < 0 || position > length - 1)
         //* 判断是否越界
-        throw isOutOfRange();
+        throw outOfRange();
 
     for (int j = position; j < length - 1; j++)
         //* 前移在删除位置position之后的所有元素
@@ -128,7 +128,7 @@ template <class T>
 T seqList<T>::visit(int position) const
 {
     if (position < 0 || position > length - 1)
-        throw isOutOfRange();
+        throw outOfRange();
     return data[position];
 }
 

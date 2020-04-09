@@ -169,7 +169,7 @@ void linkList<T>::insert(int position, const T &value)
 {
     Node *p, *q;
     if (position < 0 || position > length) //* 合法位置(0..n)
-        throw isOutOfRange();
+        throw outOfRange();
 
     p = getPosition(position - 1); //* p为指向position-1位置的指针
     q = new Node(value, p->next);  //* 生成新结点
@@ -190,7 +190,7 @@ void linkList<T>::remove(int position)
 {
     Node *pre, *p;
     if (position < 0 || position > length - 1)
-        throw isOutOfRange();
+        throw outOfRange();
 
     pre = getPosition(position - 1); //* pre为指向position-1位置，即待删除元素的前一个元素的指针
     p = pre->next;                   //* p为指向pre指针的下一个结点的指针，即指向待删除结点
@@ -239,7 +239,7 @@ T linkList<T>::visit(int position) const
     int count = 0;
 
     if (position < 0 || position > length - 1)
-        throw isOutOfRange();
+        throw outOfRange();
 
     while (count < position) //* 向后扫描，直到p指向第个元素或p为空
     {

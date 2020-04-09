@@ -17,23 +17,23 @@ public:
     virtual ~List(){};
 };
 
-class isOutOfRange
+class outOfRange
 {
 public:
     //* 检查范围有效性
     const char *checkRange() const throw()
     {
-        return "size out of RANGE";
+        return "OUT of RANGE";
     }
 };
 
-class isErrorSize
+class errorSize
 {
 public:
     //* 检查长度有效性
     const char *checkSize() const throw()
     {
-        return "BAD size";
+        return "ERROR size";
     }
 };
 
