@@ -1,6 +1,9 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
+#include <iostream>
+using namespace std;
+
 template <class T>
 class List
 {
@@ -17,7 +20,7 @@ public:
     virtual ~List(){};
 };
 
-class outOfRange
+class outOfRange : public exception
 {
 public:
     //* 检查范围有效性
@@ -27,7 +30,7 @@ public:
     }
 };
 
-class errorSize
+class errorSize : public exception
 {
 public:
     //* 检查长度有效性

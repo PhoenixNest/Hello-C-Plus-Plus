@@ -1,6 +1,9 @@
 #ifndef _STACK_H_
 #define _STACK_H_
 
+#include <iostream>
+using namespace std;
+
 template <class T>
 class Stack
 {
@@ -14,7 +17,7 @@ public:
     virtual ~Stack(){};
 };
 
-class outOfRange
+class outOfRange : public exception
 {
 public:
     const char *what() const throw()
@@ -23,7 +26,7 @@ public:
     }
 };
 
-class errorSize
+class errorSize : public exception
 {
 public:
     const char *what() const throw()
