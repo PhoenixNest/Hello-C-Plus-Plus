@@ -1,7 +1,7 @@
 #ifndef _SEQ_STACK_H_
 #define _SEQ_STACK_H_
 
-#include "Stack.h"
+#include "Stack.H"
 
 template <class T>
 class seqStack : public Stack<T>

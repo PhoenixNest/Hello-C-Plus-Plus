@@ -2,7 +2,7 @@
 #define _LINK_QUEUE_H_
 #include <iostream>
 
-#include "Queue.h"
+#include "Queue.H"
 
 template <class T>
 class linkQueue : public Queue<T>

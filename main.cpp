@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stack>
+#include <queue>
 #include <cstdlib>
 
 using namespace std;
@@ -9,12 +11,25 @@ using namespace std;
 // #include "LinkStack.h"
 // #include "seqQueue.h"
 // #include "LinkQueue.h"
+// #include "BinaryLinkedList.h"
+#include "HuffmanTree.h"
 
 #include "mySearch.h"
 #include "mySortExchange.h"
 #include "mySortInsertion.h"
 #include "mySortMerging.h"
 #include "mySortSelection.h"
+
+// Huffman树测试
+void testHuffmanTree()
+{
+    char d[] = "GOLESD";
+    int w[] = {4, 6, 1, 2, 1, 1, 2};
+    huffmanTree<char> tree(7);
+    tree.createhuffmanTree(d, w);
+    tree.huffmanEncoding();
+    tree.printHuffmanCode();
+}
 
 int main()
 {
@@ -26,6 +41,10 @@ int main()
 
     // seqQueue<int> *queue = new seqQueue<int>();
     // linkQueue<int> *queue = new linkQueue<int>();
+
+    // binaryLinkedList<char> tree;
+
+    testHuffmanTree();
 
     cout << "Hello World" << endl;
     return 0;

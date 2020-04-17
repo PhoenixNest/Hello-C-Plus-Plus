@@ -4,7 +4,7 @@
 #include <stack>
 using namespace std;
 
-#include "List.h"
+#include "List.H"
 
 template <class T>
 class linkList : public List<T>

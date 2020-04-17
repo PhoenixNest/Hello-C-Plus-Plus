@@ -2,7 +2,7 @@
 #define _LINK_STACK_H_
 #include <iostream>
 
-#include "Stack.h"
+#include "Stack.H"
 
 template <class T>
 class linkStack : public Stack<T>

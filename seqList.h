@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-#include "List.h"
+#include "List.H"
 
 template <class T>
 class seqList : public List<T>
