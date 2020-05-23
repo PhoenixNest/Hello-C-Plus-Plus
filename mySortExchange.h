@@ -39,9 +39,7 @@ int partition(T array[], int low, int high)
     {
         // 大下标端找小于枢轴的记录
         while (low < high && array[high] >= temp)
-        {
             high--;
-        }
 
         // 该记录移动到小下标端
         if (low < high)
@@ -52,9 +50,7 @@ int partition(T array[], int low, int high)
 
         // 小下标端找大于枢轴的记录
         while (low < high && array[low] <= temp)
-        {
             low++;
-        }
 
         // 该记录移动到大下标端
         if (low < high)

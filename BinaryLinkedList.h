@@ -126,6 +126,7 @@ int binaryLinkedList<T>::size(Node *node) const
 {
     if (node == NULL) //* 递归出口。空树结点数为0
         return 0;
+
     return 1 + size(node->left) + size(node->right); //* 结点数 = 左右子结点数之和 + 根结点
 }
 
@@ -148,7 +149,7 @@ int binaryLinkedList<T>::leafNum(Node *node) const
     if (node == NULL)
         return 0; //* 空树
     else if ((node->left == NULL) && (node->right == NULL))
-        return node; //* 只有根结点
+        return 1; //* 只有根结点
     else
         return leafNum(node->left) + leafNum(node->right); //* 叶子数 = 左孩子数 + 右孩子数
 }

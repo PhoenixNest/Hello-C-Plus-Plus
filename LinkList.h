@@ -19,6 +19,7 @@ private:
             data = value;
             next = p;
         }
+
         Node(Node *p = NULL)
         {
             next = p;
@@ -119,6 +120,7 @@ void linkList<T>::clear()
 
 //* 遍历单链表
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
 template <class T>
 void linkList<T>::traverse() const
 {
@@ -126,7 +128,7 @@ void linkList<T>::traverse() const
     cout << "traverse: ";
     while (p != NULL)
     {
-        cout << p->data << "---";
+        cout << p->data << " ";
         p = p->next;
     }
 
@@ -155,6 +157,7 @@ typename linkList<T>::Node *linkList<T>::getPosition(int position) const
 
 //* 在单链表的position位置插入值为value的元素，挂链
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
 //* ------------------------------------------------
 //*** s为指向新结点的指针，p为指向position-1位置元素的指针
 //*** (1) s->next = p->next
@@ -182,6 +185,7 @@ void linkList<T>::insert(int position, const T &value)
 
 //* 在单链表中删除位于position位置的元素
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
 //*** p指向当前结点(即待删除结点)，pre表示前一个结点的指针
 //*** (1) pre->next = p->next || 也可写成：pre->next = pre->next->next，其中将pre->next看成一个结点(即待删除结点)指针
 //*** (2) delete p
@@ -211,6 +215,7 @@ void linkList<T>::remove(int position)
 
 //* 单链表按值查找
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
 template <class T>
 int linkList<T>::search(const T &value) const
 {
@@ -218,7 +223,7 @@ int linkList<T>::search(const T &value) const
     int count = 0;
 
     //* 当p不为空与p所指向的data域的值不等于value时，继续扫描链表
-    //* 结束循环条件：指针p为NULL
+    //* 结束循环条件：指针p为NULL 或 指针p的数据域不等于期望值value
     while (p != NULL && p->data != value)
     {
         p = p->next;
@@ -293,21 +298,27 @@ void linkList<T>::tailCreate()
     }
 }
 
+//* 逆置单链表(头插法实现)
+//** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
+//*** 算法思想：
+//*** 1. 断开链接，构造空链表(line310, 311)
+//*** 2. 将原链表中元素用头插法重新插入head链表
 template <class T>
 void linkList<T>::inverse()
 {
-    Node *p, *temp;
-    p = head->next;
-    head->next = NULL;
+    Node *p, *temp;    //* p用于遍历单链表，temp用于保存后继结点
+    p = head->next;    //* 指向首元结点
+    head->next = NULL; //* 头结点指针域置空，构成空链表
     if (p)
-        tail = p;
+        tail = p; //* 更新尾结点
 
     while (p)
     {
-        temp = p->next;
-        p->next = head->next;
-        head->next = p;
-        p = temp;
+        temp = p->next;       //* 暂存p的后继
+        p->next = head->next; //* 修改首元结点
+        head->next = p;       //* 修改头结点
+        p = temp;             //* 处理下一结点
     }
 }
 
@@ -330,6 +341,7 @@ int linkList<T>::prior(const T &value) const
         return count;
 }
 
+//* 合并链表
 template <class T>
 linkList<T> *linkList<T>::Union(linkList<T> *listB)
 {

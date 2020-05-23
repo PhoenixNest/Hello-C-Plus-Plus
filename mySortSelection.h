@@ -2,7 +2,7 @@
 
 // * 直接选择排序 时间复杂度：O(n^2) 空间复杂度：O(1)
 template <class T>
-void straightSeleSort(T R[], int size)
+void straightSelectSort(T R[], int size)
 {
     int pos, min, j;
     for (pos = 0; pos < size - 1; pos++)

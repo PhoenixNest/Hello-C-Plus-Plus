@@ -19,11 +19,11 @@ public:
     seqList(seqList &list);       //* 拷贝构造
     ~seqList() { delete[] data; } //* 析构函数
 
-    void clear() { length = 0; }                 //* 置空
+    void clear() { length = 0; }               //* 置空
     bool empty() const { return length == 0; } //* 判空
-    int size() const { return length; }          //* 返回表长
-    void traverse() const;                       //* 遍历当前表
-    void inverse();                              //* 逆置当前表
+    int size() const { return length; }        //* 返回表长
+    void traverse() const;                     //* 遍历当前表
+    void inverse();                            //* 逆置当前表
 
     void insert(int position, const T &value); //* 在position位置插入值为value的元素
     void remove(int position);                 //* 删除位于position的元素，length - 1
@@ -58,6 +58,8 @@ seqList<T>::seqList(seqList &seqList)
 
 //* 在position位置插入值为value的元素
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
+//*** 平均移动元素次数(期望值)：n/2
 template <class T>
 void seqList<T>::insert(int position, const T &value)
 {
@@ -81,6 +83,7 @@ void seqList<T>::insert(int position, const T &value)
 }
 
 //* 删除位于position位置的元素
+//* 元素个数不变，表长 -1
 //** 时间复杂度：O(n)
 template <class T>
 void seqList<T>::remove(int position)
@@ -97,22 +100,10 @@ void seqList<T>::remove(int position)
     --length;
 };
 
-//* 表满时扩大表空间
-template <class T>
-void seqList<T>::resize()
-{
-    T *p = data;           //* 指针p指向原顺序表空间
-    maxSize *= 2;          //* 扩大2倍表空间
-    data = new T[maxSize]; //* 将旧的数据指向新的表空间
-
-    for (int i = 0; i < length; ++i) //* 复制元素至扩大后的新表
-        data[i] = p[i];
-
-    delete[] p;
-}
-
 //* 查找值为value的元素
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
+//*** 平均移动元素次数(期望值)：(n + 1) / 2
 template <class T>
 int seqList<T>::search(const T &value) const
 {
@@ -132,7 +123,23 @@ T seqList<T>::visit(int position) const
     return data[position];
 }
 
+//* 表满时扩大表空间
+template <class T>
+void seqList<T>::resize()
+{
+    T *p = data;           //* 指针p指向原顺序表空间
+    maxSize *= 2;          //* 扩大2倍表空间
+    data = new T[maxSize]; //* 将旧的数据指向新的表空间
+
+    for (int i = 0; i < length; ++i) //* 复制元素至扩大后的新表
+        data[i] = p[i];
+
+    delete[] p;
+}
+
 //* 遍历顺序表
+//** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
 template <class T>
 void seqList<T>::traverse() const
 {
@@ -154,6 +161,8 @@ void seqList<T>::traverse() const
 
 //* 逆置当前线性表
 //** 时间复杂度：O(n)
+//** 空间复杂度：O(1)
+//*** 总交换次数：|length/2|向下取整
 template <class T>
 void seqList<T>::inverse()
 {
