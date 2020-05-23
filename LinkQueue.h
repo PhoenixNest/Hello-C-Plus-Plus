@@ -98,6 +98,7 @@ T linkQueue<T>::deQueue()
     Node *p = front;
     T value = front->data;
     front = front->next;
+    
     if (front == NULL)
         rear = NULL;
 
