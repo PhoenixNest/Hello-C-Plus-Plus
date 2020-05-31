@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-#include "List.H"
+#include "List.h"
 
 template <class T>
 class seqList : public List<T>
@@ -52,6 +52,7 @@ seqList<T>::seqList(seqList &seqList)
     maxSize = seqList.maxSize;
     length = seqList.length;
     data = new T[maxSize];
+    
     for (int i = 0; i < length; ++i)
         data[i] = seqList.data[i];
 }
@@ -120,6 +121,7 @@ T seqList<T>::visit(int position) const
 {
     if (position < 0 || position > length - 1)
         throw outOfRange();
+
     return data[position];
 }
 
@@ -151,9 +153,7 @@ void seqList<T>::traverse() const
     {
         cout << "current Element" << endl;
         for (int i = 0; i < maxSize; i++)
-        {
             cout << data[i] << "---";
-        }
 
         cout << endl;
     }

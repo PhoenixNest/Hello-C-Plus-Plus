@@ -1,7 +1,7 @@
 #ifndef _SEQ_QUEUE_H_
 #define _SEQ_QUEUE_H_
 
-#include "Queue.H"
+#include "Queue.h"
 
 template <class T>
 class seqQueue : public Queue<T>

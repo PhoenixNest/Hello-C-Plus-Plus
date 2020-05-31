@@ -322,6 +322,7 @@ void linkList<T>::inverse()
     }
 }
 
+//* 查找值为value的前驱
 template <class T>
 int linkList<T>::prior(const T &value) const
 {

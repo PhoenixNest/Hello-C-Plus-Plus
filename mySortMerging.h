@@ -9,29 +9,19 @@ void merge(T array[], T temp[], int low, int mid, int high)
     while (i < mid && j <= high)
     {
         if (array[i] < array[j])
-        {
             temp[k++] = array[i++];
-        }
         else
-        {
             temp[k++] = array[j++];
-        }
     }
 
     while (i < mid)
-    {
         temp[k++] = array[i++];
-    }
 
     while (j <= high)
-    {
         temp[k++] = array[j++];
-    }
 
     for (i = 0, k = low; k <= high;)
-    {
         array[k++] = temp[i++];
-    }
 }
 
 // * 递归二路归并排序
@@ -39,9 +29,7 @@ template <class T>
 void mergeSort(T array[], T temp[], int low, int high)
 {
     if (low == high)
-    {
         return;
-    }
 
     // 从中间划分为两个子序列
     int mid = (low + high) / 2;

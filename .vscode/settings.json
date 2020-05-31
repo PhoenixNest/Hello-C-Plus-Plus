@@ -49,6 +49,8 @@
         "utility": "cpp",
         "stdexcept": "cpp",
         "hashtable": "cpp",
-        "typeinfo": "cpp"
-    }
+        "typeinfo": "cpp",
+        "queue": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

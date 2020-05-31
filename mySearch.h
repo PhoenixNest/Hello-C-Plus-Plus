@@ -13,7 +13,8 @@ int seqSeach(vector<T> &array, const T &key)
     array[0] = key;
 
     // 从表尾向前查找
-    for (i = array.size() - 1; key != array[i]; --i);
+    for (i = array.size() - 1; key != array[i]; --i)
+        ;
 
     // 成功则返回元素下标，失败返回0
     return i;
@@ -29,7 +30,8 @@ int sortBySequential(vector<T> &array, const T &key)
     array[0] = key;
 
     // 从表尾向前查找
-    for (i = array.size() - 1; key < array[i]; --i);
+    for (i = array.size() - 1; key < array[i]; --i)
+        ;
 
     // 返回元素位置
     if (key == array[i])
@@ -47,7 +49,9 @@ int sortBySequential(vector<T> &array, const T &key)
 template <class T>
 int binarySearch(const vector<T> &array, const T &key)
 {
-    int low = 1, high = array.size() - 1, mid;
+    int low = 1;
+    int high = array.size() - 1;
+    int mid;
 
     // 查找范围不为空
     while (low <= high)
@@ -57,20 +61,15 @@ int binarySearch(const vector<T> &array, const T &key)
 
         // 查找成功
         if (key == array[mid])
-        {
             return mid;
-        }
 
         // 继续在前半区查找，修改high
         if (key < array[mid])
-        {
             high = mid - 1;
-        }
+
         // 继续在后半区查找，修改low
         else
-        {
             low = mid + 1;
-        }
     }
 
     // 查找失败
@@ -82,19 +81,18 @@ template <class T>
 int binarySearch2(const vector<T> &array, const int &key, int low, int high)
 {
     if (low > high)
-    {
         return 0;
-    }
 
     int mid = (low + high) / 2;
+    
     if (key == array[mid])
-    {
         return mid;
-    }
+
     else if (key < array[mid])
-    {
+        //左区间查找
         return binarySearch2(array, key, low, mid - 1);
-    }
+
     else
+        //右区间查找
         return binarySearch2(array, key, mid + 1, high);
 }

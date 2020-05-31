@@ -16,10 +16,8 @@ void straightInsertSort(T array[], int size)
 
         // 从后往前查找插入位置
         for (j = pos - 1; temp < array[j] && j >= 0; j--)
-        {
             // 将大于待插入记录的记录向后移动
             array[j + 1] = array[j];
-        }
 
         // 将待插入记录放到合适位置
         array[j + 1] = temp;
@@ -30,10 +28,10 @@ void straightInsertSort(T array[], int size)
 template <class T>
 void binaryInsertSort(T array[], int size)
 {
-    int pos, j, low, high, mid;
+    int low, high, mid;
     T temp;
     // 假设第一个记录有序
-    for (pos = 1; pos < size; pos++)
+    for (int pos = 1; pos < size; pos++)
     {
         // 将待排序记录array[pos]存入临时变量
         temp = array[pos];
@@ -50,23 +48,19 @@ void binaryInsertSort(T array[], int size)
 
             // 插入点在低半区
             if (temp < array[mid])
-            {
                 high = mid - 1;
-            }
+
             // 插入点在高半区
             else
-            {
                 low = mid + 1;
-            }
-
-            for (j = pos - 1; j >= low; j--)
-            {
-                // 记录后移
-                array[j + 1] = array[j];
-            }
-            // 插入待排序记录
-            array[low] = temp;
         }
+
+        for (int j = pos - 1; j >= low; j--)
+            // 记录后移
+            array[j + 1] = array[j];
+
+        // 插入待排序记录
+        array[low] = temp;
     }
 }
 
@@ -75,17 +69,19 @@ template <class T>
 void shellSort(T array[], int size)
 {
     // gap为希尔增量，即步长。pos为待插入记录位置
-    int gap, pos, j;
+    int gap, pos, i;
     T temp;
     for (gap = size / 2; gap > 0; gap /= 2)
     {
-        for (j = pos - gap; j >= 0 && array[j] > temp; j -= gap)
+        for (pos = gap; pos < size; pos++)
         {
-            // 记录后移
-            array[j + gap] = array[j];
-        }
+            temp = array[pos];
+            for (i = pos - gap; i >= 0 && array[i] > temp; i -= gap)
+                // 记录后移
+                array[i + gap] = array[i];
 
-        // 将待插入记录放到合适位置
-        array[j + gap] = temp;
+            // 将待插入记录放到合适位置
+            array[i + gap] = temp;
+        }
     }
 }

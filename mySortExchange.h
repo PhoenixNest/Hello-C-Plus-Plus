@@ -73,9 +73,8 @@ void quickSort(T array[], int low, int high)
 {
     int pivot;
     if (low >= high)
-    {
         return;
-    }
+
     // 一次划分，返回枢轴位置
     pivot = partition(array, low, high);
 
@@ -109,16 +108,13 @@ void siftDown(T array[], int pos, int size)
     {
         child = pos * 2 + 1;
         if (child != size - 1 && array[child + 1] > array[child])
-        {
             // 选取两个孩子中较大者
             child++;
-        }
 
         if (array[child] > temp)
-        {
             // 较大的孩子比双亲大
             array[pos] = array[child];
-        }
+
         else
             break;
     }
@@ -129,7 +125,7 @@ void siftDown(T array[], int pos, int size)
 
 // 堆排序
 // * 建堆(第一次for循环)的时间复杂度：O(n)
-// ** 第二次for循环的时间复杂度：O(nlogn)
+// ** 调堆(第二次for循环)的时间复杂度：O(nlogn)
 template <class T>
 void heapSort(T array[], int size)
 {
