@@ -76,7 +76,7 @@ int main()
   // binaryInsertSort(array, size);
   // shellSort(array, size);
 
-  for (int i = 0; i < 7; i++)
+  for (int i = 0; i < size; i++)
     cout << array[i] << " | ";
 
   return 0;

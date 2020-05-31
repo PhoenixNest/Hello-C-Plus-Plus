@@ -50,7 +50,8 @@
         "stdexcept": "cpp",
         "hashtable": "cpp",
         "typeinfo": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "initializer_list": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

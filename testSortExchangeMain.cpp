@@ -123,7 +123,7 @@ int main()
   // mBinaryInsertSort(array, size);
   // heapSort(array, size);
 
-  for (int i = 0; i < 7; i++)
+  for (int i = 0; i < size; i++)
     cout << array[i] << " | ";
 
   return 0;
