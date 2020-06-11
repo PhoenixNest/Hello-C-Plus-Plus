@@ -73,7 +73,7 @@ public:
             preOrder(root);
         }
     }
-    
+
     void inOrderTraverse() //* 公有，递归，中序遍历
     {
         if (root)
@@ -166,6 +166,30 @@ void binaryLinkedList<T>::preOrder(Node *node) const
     }
 }
 
+//* 递归，中序遍历，左根右，LDR
+template <class T>
+void binaryLinkedList<T>::inOrder(Node *node) const
+{
+    if (node)
+    {
+        preOrder(node->left);      //* 递归遍历左子树
+        cout << node->data << " "; //* 访问数据域
+        preOrder(node->right);     //* 递归遍历右子树
+    }
+}
+
+//* 递归，后序遍历，左右根，LRD
+template <class T>
+void binaryLinkedList<T>::postOrder(Node *node) const
+{
+    if (node)
+    {
+        preOrder(node->left);      //* 递归遍历左子树
+        preOrder(node->right);     //* 递归遍历右子树
+        cout << node->data << " "; //* 访问数据域
+    }
+}
+
 //* 非递归，前序遍历
 //** 算法思想：
 //** 每遇到一个结点，先访问该结点，并把该结点入栈，然后继续遍历左子树。
@@ -192,18 +216,6 @@ void binaryLinkedList<T>::preOrderWithStack() const
     }
 }
 
-//* 递归，中序遍历，左根右，LDR
-template <class T>
-void binaryLinkedList<T>::inOrder(Node *node) const
-{
-    if (node)
-    {
-        preOrder(node->left);      //* 递归遍历左子树
-        cout << node->data << " "; //* 访问数据域
-        preOrder(node->right);     //* 递归遍历右子树
-    }
-}
-
 //* 非递归中序遍历
 //** 算法思想：
 //** 每遇到一个结点就把它入栈，然后遍历左子树
@@ -227,18 +239,6 @@ void binaryLinkedList<T>::inOrderWithStack() const
             cout << p->data << " "; //* 访问当前结点数据域
             p = p->right;           //* 工作指针指向右子树
         }
-    }
-}
-
-//* 递归，后序遍历，左右根，LRD
-template <class T>
-void binaryLinkedList<T>::postOrder(Node *node) const
-{
-    if (node)
-    {
-        preOrder(node->left);      //* 递归遍历左子树
-        preOrder(node->right);     //* 递归遍历右子树
-        cout << node->data << " "; //* 访问数据域
     }
 }
 
@@ -336,6 +336,5 @@ void binaryLinkedList<T>::preOrderCreate(T flag, Node *&t)
 }
 
 //* 带外部结点的层次序列构造二叉链表表示的二叉树
-
 
 #endif
