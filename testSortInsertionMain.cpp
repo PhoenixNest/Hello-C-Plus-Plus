@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// #include "mySortInsertion.h"
+
 //* 直接插入排序
 void straightInsertSort(int array[], int size)
 {

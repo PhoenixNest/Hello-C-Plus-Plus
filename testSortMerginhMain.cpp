@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// #include "mySortMerging.h"
+
 void merge(int array[], int temp[], int low, int mid, int high)
 {
   int i = low, j = mid, k = 0;
