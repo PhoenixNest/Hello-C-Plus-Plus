@@ -1,0 +1,33 @@
+{
+    "editor.formatOnType": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorWidth": 2,
+    "editor.formatOnSaveTimeout": 100,
+    "editor.minimap.maxColumn": 200,
+    "editor.quickSuggestionsDelay": 0,
+    "files.associations": {
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "exception": "cpp",
+        "initializer_list": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp"
+    }
+}

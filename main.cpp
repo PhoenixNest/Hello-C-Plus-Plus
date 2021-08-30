@@ -5,13 +5,6 @@
 
 using namespace std;
 
-// #include "seqList.h"
-// #include "LinkList.h"
-// #include "seqStack.h"
-// #include "LinkStack.h"
-// #include "seqQueue.h"
-// #include "LinkQueue.h"
-// #include "BinaryLinkedList.h"
 #include "HuffmanTree.h"
 
 #include "mySearch.h"
@@ -19,6 +12,15 @@ using namespace std;
 #include "mySortInsertion.h"
 #include "mySortMerging.h"
 #include "mySortSelection.h"
+
+// #include "seqList.h"
+// #include "LinkList.h"
+// #include "seqStack.h"
+// #include "LinkStack.h"
+// #include "seqQueue.h" 
+// #include "LinkQueue.h"
+// #include "BinaryLinkedList.h"
+
 
 // Huffman树测试
 void testHuffmanTree()
