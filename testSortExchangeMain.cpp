@@ -56,20 +56,22 @@ int fastSort(int array[], int low, int high)
     while (low < high && array[high] >= temp)
       high--;
 
-    if (low < high)
-    {
-      array[low] = array[high];
-      low++;
-    }
+    array[low] = array[high];
+    // if (low < high)
+    // {
+    //   array[low] = array[high];
+    //   low++;
+    // }
 
     while (low < high && array[low] <= temp)
       low++;
 
-    if (low < high)
-    {
-      array[high] = array[low];
-      high--;
-    }
+    array[high] = array[low];
+    // if (low < high)
+    // {
+    //   array[high] = array[low];
+    //   high--;
+    // }
   }
 
   array[low] = temp;

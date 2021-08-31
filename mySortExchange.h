@@ -42,22 +42,24 @@ int partition(T array[], int low, int high)
             high--;
 
         // 该记录移动到小下标端
-        if (low < high)
-        {
-            array[low] = array[high];
-            low++;
-        }
+        array[low] = array[high];
+        // if (low < high)
+        // {
+        //     array[low] = array[high];
+        //     low++;
+        // }
 
         // 小下标端找大于枢轴的记录
         while (low < high && array[low] <= temp)
             low++;
 
         // 该记录移动到大下标端
-        if (low < high)
-        {
-            array[high] = array[low];
-            high--;
-        }
+        array[high] = array[low];
+        // if (low < high)
+        // {
+        //     array[high] = array[low];
+        //     high--;
+        // }
     }
 
     // 把枢轴回填到分解位置上
