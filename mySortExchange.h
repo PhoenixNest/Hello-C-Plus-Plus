@@ -24,8 +24,8 @@ void bubbleSort(T array[], int size)
     }
 }
 
-// * 快速排序 时间复杂度：O(nlogn)
-// ** 目前最快的内部排序算法，适用于记录较多且基本无序的序列
+//* 快速排序 时间复杂度：O(nlogn)
+//** 目前最快的内部排序算法，适用于记录较多且基本无序的序列
 //  一趟快速排序
 template <class T>
 // 参数列表：待排序序列，排序区间的下界，排序区间的上界
@@ -69,7 +69,7 @@ int partition(T array[], int low, int high)
     return low;
 }
 
-// 递归快速排序
+//* 递归快速排序
 template <class T>
 void quickSort(T array[], int low, int high)
 {
@@ -95,11 +95,11 @@ void quickSort(T array[], int size)
     quickSort(array, 0, size - 1);
 }
 
-// * 堆排序 时间复杂度：O(nlogn) 空间复杂度：O(1)
-// 向下调整成堆
+//* 堆排序 时间复杂度：O(nlogn) 空间复杂度：O(1)
+//* 向下调整成堆
 template <class T>
 // 参数列表：待排序序列，要调整的节点编号，序列大小
-void siftDown(T array[], int pos, int size)
+void shiftDown(T array[], int pos, int size)
 {
     int child;
 
@@ -125,9 +125,9 @@ void siftDown(T array[], int pos, int size)
     array[pos] = temp;
 }
 
-// 堆排序
-// * 建堆(第一次for循环)的时间复杂度：O(n)
-// ** 调堆(第二次for循环)的时间复杂度：O(nlogn)
+//* 堆排序
+//* 建堆(第一次for循环)的时间复杂度：O(n)
+//** 调堆(第二次for循环)的时间复杂度：O(nlogn)
 template <class T>
 void heapSort(T array[], int size)
 {
@@ -135,7 +135,7 @@ void heapSort(T array[], int size)
     // 初始建堆，从最后一个非叶子节点开始调整堆
     for (i = size / 2 - 1; i >= 0; i--)
     {
-        siftDown(array, i, size);
+        shiftDown(array, i, size);
     }
 
     // 共size - 1趟排序(删除堆顶元素后反复调整堆)
@@ -145,6 +145,6 @@ void heapSort(T array[], int size)
         swap(array[0], array[i]);
 
         // 将array[0..i]重新调整为大根堆
-        siftDown(array, 0, i);
+        shiftDown(array, 0, i);
     }
 }

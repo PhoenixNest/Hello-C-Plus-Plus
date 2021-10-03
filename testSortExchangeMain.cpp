@@ -81,7 +81,7 @@ int fastSort(int array[], int low, int high)
 
 //* 堆排序
 // -- 调堆
-void siftDown(int array[], int pos, int size)
+void shiftDown(int array[], int pos, int size)
 {
   int child;
   int temp = array[pos];
@@ -105,13 +105,13 @@ void heapSort(int array[], int size)
 {
   // --- 建堆
   for (int i = size / 2 - 1; i >= 0; i--)
-    siftDown(array, i, size);
+    shiftDown(array, i, size);
 
   // --- 调堆
   for (int i = size - 1; i > 0; i--)
   {
     swap(array[0], array[i]);
-    siftDown(array, 0, i);
+    shiftDown(array, 0, i);
   }
 }
 
