@@ -27,7 +27,7 @@ public:
 
     void insert(int position, const T &value); //* 在position位置插入值为value的元素
     void remove(int position);                 //* 删除位于position的元素，length - 1
-    int search(const T &value) const;          //* 查找值为value的元素在表中的值
+    int search(const T &value) const;          //* 查找值为value的元素在表中的位置
     T visit(int position) const;               //* 访问position位置元素的值
 
     bool Union(seqList<T> &list);
