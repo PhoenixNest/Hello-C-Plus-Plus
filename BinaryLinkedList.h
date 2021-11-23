@@ -172,9 +172,9 @@ void binaryLinkedList<T>::inOrder(Node *node) const
 {
     if (node)
     {
-        preOrder(node->left);      //* 递归遍历左子树
+        inOrder(node->left);      //* 递归遍历左子树
         cout << node->data << " "; //* 访问数据域
-        preOrder(node->right);     //* 递归遍历右子树
+        inOrder(node->right);     //* 递归遍历右子树
     }
 }
 
@@ -184,8 +184,8 @@ void binaryLinkedList<T>::postOrder(Node *node) const
 {
     if (node)
     {
-        preOrder(node->left);      //* 递归遍历左子树
-        preOrder(node->right);     //* 递归遍历右子树
+        postOrder(node->left);      //* 递归遍历左子树
+        postOrder(node->right);     //* 递归遍历右子树
         cout << node->data << " "; //* 访问数据域
     }
 }
